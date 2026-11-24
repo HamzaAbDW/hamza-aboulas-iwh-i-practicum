@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        .page.page--form
+            .form-head
+                a.back(href="/") Return to the homepage
+            .panel
+                p.brand__meta New pet
+                h1= title
+                p.lede Add a name, species, and breed. The record is created in HubSpot when you submit.
+                .form-wrapper
+                    form(action="/update-cobj", method="POST")
+                        label(for="name") Name
+                        input#name(type="text", name="name", placeholder="Milo", autocomplete="off")
+                        label(for="species") Species
+                        input#species(type="text", name="species", placeholder="Cat", autocomplete="off")
+                        label(for="breed") Breed
+                        input#breed(type="text", name="breed", placeholder="Tabby", autocomplete="off")
+                        input(type="submit", value="Add pet")
